@@ -128,6 +128,7 @@
         .company-name {
             color: #666;
             margin-bottom: 5px;
+
         }
 
         .similarity {
@@ -212,9 +213,10 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/login">Dashboard</a></li>
-                    <li><a href="/profile">My Profile</a></li>
+                    
                     <li><a href="/add_project">Add a Project</a></li>
-                    <li><a href="/login">Sign In</a></li>
+                    
+                    <li><a href="/">Logout</a></li>
                 </ul>
             </nav>
         </div>
@@ -241,6 +243,7 @@
         </ul>
     </div>
 -->
+
 <!-- Content -->
 
 
@@ -254,9 +257,11 @@
         {% for project, company, similarity in recommended_projects %}
             <li>
                 <div class="project-details">
-                    <div class="project-name">{{ project }}</div>
-                    <div class="company-name">{{ company }}</div>
+                    <div class="project-name">Project Name: {{ project }}</div>
+                    <div class="company-name">Company Name: {{ company }}</div>
                     <div class="similarity">Similarity: {{ similarity }}</div>
+                    <div class="skills"> {{skills}}</div>
+                    <div class="Project_Description">{{Project_Description}}</div>
                   
                     <form action="mailto:intellcollab@gmail.com" method="post" enctype="text/plain">
                         <input type="hidden" name="subject" value="Query about {{ project }}">
@@ -270,7 +275,120 @@
 </div>
 
 
+<!--Main
+<div class="container">
+    <h1>Recommended Projects</h1>
+    <form action="/recommend_projects" method="post">
+        <input type="text" id="skills" name="skills" placeholder="Enter your skills..." required>
+        <input type="submit" value="Recommend Projects">
+    </form>
+    <ul>
+        {% for project, company, similarity in recommended_projects %}
+            <li>
+                <div class="project-details">
+                    <div class="project-name">Project Name: {{ project }}</div>
+                    <div class="company-name">Company Name: {{ company }}</div>
+                    <div class="similarity">Similarity: {{ similarity }}</div>
+                    
+                  
+                    <form action="mailto:intellcollab@gmail.com" method="post" enctype="text/plain">
+                        <input type="hidden" name="subject" value="Query about {{ project }}">
+                        <input type="hidden" name="body" value="Dear IntellCollab Team, I am interested in the project '{{ project }}' by {{ company }}.">
+                        <button type="submit">Query Project</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
 
+-->
+
+<!--
+<div class="container">
+    <h1>Recommended Projects</h1>
+    <form action="/recommend_projects" method="post">
+        <input type="text" id="skills" name="skills" placeholder="Enter your skills..." required>
+        <input type="submit" value="Recommend Projects">
+    </form>
+    <ul>
+        {% for project, company, similarity in recommended_projects %}
+            <li>
+                <div class="project-details">
+                    <div class="project-name">Project Name: {{ project }}</div>
+                    <div class="company-name">Company Name: {{ company }}</div>
+                    <div class="similarity">Similarity: {{ similarity }}</div>
+                    
+                  
+                    <form action="mailto:intellcollab@gmail.com" method="post" enctype="text/plain">
+                        <input type="hidden" name="subject" value="Query about {{ project }}">
+                        <input type="hidden" name="body" value="Dear IntellCollab Team, I am interested in the project '{{ project }}' by {{ company }}.">
+                        <button type="submit">Query Project</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+-->
+
+<!--
+<div class="container">
+    <h1>Recommended Projects</h1>
+    <form action="/recommend_projects" method="post">
+        <input type="text" id="skills" name="skills" placeholder="Enter your skills..." required>
+        <input type="submit" value="Recommend Projects">
+    </form>
+    <ul>
+        {% for project in recommended_projects %}
+            <li>
+                <div class="project-details">
+                    <div class="project-name">Project Name: {{ project[0] }}</div>
+                    <div class="company-name">Company Name: {{ project[1] }}</div>
+                    <div class="similarity">Similarity: {{ project[2] }}</div>
+                    <div class="skills">Description: {{ project[3] }}</div>
+                    <div class="project-description">Description: {{ project[4] }}</div>
+                    
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+-->
+
+<!--
+<div class="container">
+    <h1>Recommended Projects</h1>
+    <form action="/recommend_projects" method="post">
+        <input type="text" id="skills" name="skills" placeholder="Enter your skills..." required>
+        <input type="submit" value="Recommend Projects">
+    </form>
+    <ul>
+        {% for project, company, similarity in recommended_projects %}
+            <li>
+                <div class="project-details">
+                    <div class="project-name">Project Name: {{ project }}</div>
+                    <div class="company-name">Company Name: {{ company }}</div>
+                    <div class="similarity">Similarity: {{ similarity }}</div>
+                    <div class="skills">Skills: {{ Skills }}</div>
+                    <div class="project-description">Description: {{ description }}</div>
+                  
+                    <form action="mailto:intellcollab@gmail.com" method="post" enctype="text/plain">
+                        <input type="hidden" name="subject" value="Query about {{ project }}">
+                        <input type="hidden" name="body" value="Dear IntellCollab Team, I am interested in the project '{{ project }}' by {{ company }}.">
+                        <button type="submit">Query Project</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+-->
+
+    
+    
 
 
      <!-- Footer -->

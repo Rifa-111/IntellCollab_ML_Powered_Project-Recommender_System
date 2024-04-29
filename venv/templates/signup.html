@@ -167,6 +167,85 @@
             font-size: 14px;
             text-align: center;
         }
+
+
+
+
+
+        /* Additional CSS specific to this page */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.signup-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.signup-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+.signup-form input,
+.signup-form select {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.signup-button {
+    padding: 10px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.signup-button:hover {
+    background-color: #004080;
+}
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+.login-link a {
+    color: #0056b3;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.login-link a:hover {
+    color: #004080;
+}
+.instruction {
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ff0000;
+    display: none;
+}
+.hidden {
+    display: none;
+}
+
     </style>
 </head>
 <body>
@@ -178,15 +257,16 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/profile">My Profile</a></li>
+                    
                     <li><a href="/login">Sign In</a></li>
-                    <li><a href="/add_project">Add a Project</a></li>
+                    <li><a href="/login">Add a Project</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Signup Form -->
+    <!-- Signup Form 
+
     <div class="container">
         <div class="signup-container">
             <h2>Sign Up</h2>
@@ -194,12 +274,60 @@
                 <input type="text" id="username" name="username" placeholder="Username" required>
                 <input type="email" id="email" name="email" placeholder="Email" required>
                 <input type="password" id="password" name="password" placeholder="Password" required>
+               
+                <input type="password" id="re-enter_password" name="re-enter_password" placeholder="Re-Type Password" required>
                 <button type="submit" class="signup-button">Sign Up</button>
             </form>
             <p class="login-link">Already have an account? <a href="/login">Sign In here</a></p>
         </div>
     </div>
+-->
 
+<!-- Signup Form -->
+<!-- Signup Form -->
+<div class="container">
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="post" class="signup-form">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="re-enter_password" name="re-enter_password" placeholder="Re-Type Password" required>
+            <select id="user_type" name="user_type" required>
+                <option value="" disabled selected>Select User Type</option>
+                <option value="Academic">Academic</option>
+                <option value="Student">Student</option>
+                <option value="Industry Expert">Industry Expert</option>
+            </select>
+            <p id="email-instruction" class="instruction hidden">Please make sure your email format matches the selected user type.</p>
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+        <p class="login-link">Already have an account? <a href="/login">Sign In here</a></p>
+    </div>
+</div>
+
+
+    <!-- Signup 
+    <div class="container">
+        <div class="signup-container">
+            <h2>Sign Up</h2>
+            <form action="/signup" method="post" class="signup-form">
+                <input type="text" id="username" name="username" placeholder="Username" required><br><br>
+                <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+                <input type="password" id="password" name="password" placeholder="Password" required><br><br>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter Password" required><br><br>
+                <select id="role" name="role" required>
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="student">Student</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="industry">Industry Partner</option>
+                </select><br><br>
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="/login">Sign In here</a></p>
+        </div>
+    </div>
+Form -->
     <!-- Footer -->
     <footer class="footer">
         <div class="container">

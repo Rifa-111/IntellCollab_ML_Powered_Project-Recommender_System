@@ -134,6 +134,74 @@
             text-align: center;
             margin-top: 20px;
         }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #0e3666;
+            color: #ffffff;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+        }
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-section {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .footer-section:last-child {
+            margin-right: 0;
+        }
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        .footer-section ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-section ul li a:hover {
+            color: #f8f8f8;
+        }
+        .social-media-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        .social-media-links li {
+            margin-right: 10px;
+        }
+        .social-media-links li:last-child {
+            margin-right: 0;
+        }
+        .social-media-links li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-media-links li a:hover {
+            color: #f8f8f8;
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -148,6 +216,7 @@
                     <li><a href="/profile">My Profile</a></li>
                     <li><a href="/add_project">Add a Project</a></li>
                     <li><a href="/login">Sign In</a></li>
+                    <li><a href="/">Logout</a></li>
                 </ul>
             </nav>
         </div>
